@@ -49,9 +49,9 @@ if [ $template = 'symfony' ]; then
 
   echo
 
-  php bin/console doctrin:schema:update --force
-  php bin/console assets:install
-  php bin/console cache:clear
+  php bin/console doctrin:schema:update --force --env prod
+  php bin/console assets:install --env prod
+  php bin/console cache:clear --env prod
 
   echo "Add read/write permissions to var folder"
   chmod -R 755 ./var
